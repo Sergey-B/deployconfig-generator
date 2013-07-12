@@ -1,4 +1,13 @@
 Capistrano::Configuration.instance.load do
+  require 'capistrano'
+  require 'capistrano/cli'
+  require "capistrano-rbenv"
+  require "bundler/capistrano"
+  require "whenever/capistrano"
+  require "delayed/recipes"
+  require "capistrano/ext/multistage"
+  require "dotenv/capistrano"
+  require "dotenv/capistrano"
   set :git_application_name,             defer{ application }
   set :deploy_to_application_name , defer{ application }
 
