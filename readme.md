@@ -6,7 +6,7 @@
 
 Add it to your Gemfile
 
-    gem 'deployconfig-generator'
+    gem 'deployconfig'
 
 Ensure you have the Capistrano gem installed:
 
@@ -30,7 +30,7 @@ Inside the newly created config/deploy.rb, add:
 
   # This one should go at the end of your deploy.rb
 
-    require 'capistrano_recipes'
+    require 'deployconfig'
 
 To create config/deploy directory with files testing.rb and production.rb run:
 

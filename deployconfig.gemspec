@@ -1,7 +1,7 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = "deployconfig-generator"
+  s.name        = "deployconfig"
   s.version     = "0.0.1"
   s.platform    = "ruby"
   s.authors     = ["Sergey Belov"]
