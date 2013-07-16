@@ -30,7 +30,7 @@ Inside the newly created config/deploy.rb, add:
 
   # This one should go at the end of your deploy.rb
 
-    require 'deployconfig'
+    require 'deploy_config'
 
 To create config/deploy directory with files testing.rb and production.rb run:
 

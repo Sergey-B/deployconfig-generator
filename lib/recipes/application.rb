@@ -4,7 +4,7 @@ Capistrano::Configuration.instance.load do
   set :deploy_to_application_name , defer{ application }
 
   set :deploy_env, defer { rails_env }
-  set :use_sudo, false
+  set :try_sudo, false
 
   # Capistrano config
   set :scm, :git
@@ -35,13 +35,13 @@ Capistrano::Configuration.instance.load do
   set :whenever_environment, defer { rails_env }
   set :whenever_identifier, defer { "#{application}_#{stage}" }
 
-
-  set :stages, %w(testing production)
-  set :default_stage, "testing"
-
   set :application,                             defer{ application }
   set :symlinks,  [ { :label => :db, :path => 'config/database.yml' } ]
   # rbenv
   set :rbenv_ruby_version, "1.9.3-p392"
+
+  set :stages, %w(testing production)
+  set :default_stage, "testing"
+  require 'capistrano/ext/multistage'
 
 end

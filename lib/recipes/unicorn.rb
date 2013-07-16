@@ -1,5 +1,4 @@
 Capistrano::Configuration.instance.load do
-
   # Unicorn config
   set :unicorn_binary, "unicorn"
   #set :unicorn_config, defer { "#{current_path}/config/unicorn/#{stage}.rb" }
