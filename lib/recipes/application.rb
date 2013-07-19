@@ -4,8 +4,11 @@ Capistrano::Configuration.instance.load do
   set :deploy_to_application_name , defer{ application }
 
   set :deploy_env, defer { rails_env }
+
   set :try_sudo, false
+
   set :use_sudo, false
+  default_run_options[:pty] = true
 
   # Capistrano config
   set :scm, :git
