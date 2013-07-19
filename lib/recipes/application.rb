@@ -5,6 +5,7 @@ Capistrano::Configuration.instance.load do
 
   set :deploy_env, defer { rails_env }
   set :try_sudo, false
+  set :use_sudo, false
 
   # Capistrano config
   set :scm, :git

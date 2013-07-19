@@ -1,6 +1,6 @@
 # Readme
 
-    Provide generators for unicorn and capistrano multistage config
+    Provide unicorn and capistrano multistage config generators
 
 ## Installation
 
@@ -28,7 +28,7 @@ Inside the newly created config/deploy.rb, add:
 
     require 'capistrano/ext/multistage' # only require if you've installed Cap ext gem
 
-  # This one should go at the end of your deploy.rb
+This one should go at the end of your deploy.rb
 
     require 'deploy_config'
 
