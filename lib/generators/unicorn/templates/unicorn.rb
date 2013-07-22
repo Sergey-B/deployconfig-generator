@@ -4,7 +4,7 @@ worker_processes 4
 preload_app true
 timeout 30
 
-application_name = defer{ application }
+application_name ='your application name'
 socket_name = application_name
 
 deploy_dir = "/var/www/#{application_name}"
