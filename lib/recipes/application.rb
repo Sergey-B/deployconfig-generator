@@ -40,7 +40,6 @@ Capistrano::Configuration.instance.load do
   set :whenever_identifier, defer { "#{application}_#{stage}" }
 
   set :application,                             defer{ application }
-  set :symlinks,  [ { :label => :db, :path => 'config/database.yml' } ]
   # rbenv
   set :rbenv_ruby_version, "1.9.3-p392"
 
