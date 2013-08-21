@@ -26,7 +26,7 @@ Capistrano::Configuration.instance.load do
   # Bundle config
   set :bundle_binary, "bundle"
   set :bundle_flags,  "--deployment --binstubs"
-  set :bundle_without, defer { [:development, :test, :production] - [ rails_env ] }
+  set :bundle_without, defer { [:development, :testing, :production] - [ rails_env ] }
 
   # Unicorn config
   set :unicorn_binary, "unicorn"
