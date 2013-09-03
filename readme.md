@@ -32,7 +32,7 @@ This one should go at the end of your deploy.rb
 
     require 'deploy_config'
 
-To create config/deploy directory with files testing.rb and production.rb run:
+To create config/deploy directory with files test.rb and production.rb run:
 
     rails g deploy
 

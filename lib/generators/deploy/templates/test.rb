@@ -1,5 +1,5 @@
-# testing.rb
-set :rails_env, :testing
+# test.rb
+set :rails_env, :test
 
 # Настраиваем ssh до сервера
 server "192.168.122.102", :app, :web, :db, :primary => true

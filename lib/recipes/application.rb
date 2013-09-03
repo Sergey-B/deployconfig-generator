@@ -26,7 +26,7 @@ Capistrano::Configuration.instance.load do
   # Bundle config
   set :bundle_binary, "bundle"
   set :bundle_flags,  "--deployment --binstubs"
-  set :bundle_without, defer { [:development, :testing, :production] - [ rails_env ] }
+  set :bundle_without, defer { [:development, :test, :production] - [ rails_env ] }
 
   # Unicorn config
   set :unicorn_binary, "unicorn"
@@ -43,8 +43,8 @@ Capistrano::Configuration.instance.load do
   # rbenv
   set :rbenv_ruby_version, "1.9.3-p392"
 
-  set :stages, %w(testing production)
-  set :default_stage, "testing"
+  set :stages, %w(test production)
+  set :default_stage, "test"
   require 'capistrano/ext/multistage'
 
 end
