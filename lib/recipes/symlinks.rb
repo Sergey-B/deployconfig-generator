@@ -1,11 +1,10 @@
 Capistrano::Configuration.instance.load do
   namespace :symlink do
+      
       desc "Setup symlinks"
       task :setup, :except => { :no_release => true } do
         symlinks.each do |symlink|
-          symlink_path = symlink[:path]
-
-          dir_path = /^(.*)\/.*$/.match(symlink_path)[1]
+          dir_path = File.dirname(symlink[:path])
           run "mkdir -p #{shared_path}/#{dir_path} && touch #{shared_path}/#{symlink[:path]}"
         end
       end
