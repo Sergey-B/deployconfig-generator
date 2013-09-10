@@ -8,6 +8,7 @@ Capistrano::Configuration.instance.load do
   #after 'deploy:finalize_update', 'sphinx:symlink_indexes'
 
   after "deploy:setup",           "symlink:setup"
+  after "deploy:setup",           "unicorn:setup"
   after "deploy:finalize_update", "symlink:symlink"
 
   after "deploy:start",           "unicorn:start"
