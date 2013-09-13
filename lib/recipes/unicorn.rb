@@ -9,7 +9,7 @@ Capistrano::Configuration.instance.load do
 
     desc 'Setup shared/tmp/sockets dir'
     task :setup, :except => { :no_release => true } do
-      run "mkdir -p #{deploy_to}/tmp/sockets/"
+      run "mkdir -p #{deploy_to}/shared/tmp/sockets/"
     end
     task :start, :roles => :app, :except => { :no_release => true } do
       run "cd #{current_path} && #{try_sudo} #{bundle_binary} exec #{unicorn_binary} -c #{unicorn_config} -E #{rails_env} -D"
