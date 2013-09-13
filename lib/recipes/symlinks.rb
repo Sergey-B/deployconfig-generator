@@ -5,7 +5,7 @@ Capistrano::Configuration.instance.load do
       task :setup, :except => { :no_release => true } do
         symlinks.each do |symlink|
           dir_path = File.dirname(symlink[:path])
-          run "mkdir -p #{deploy_to}/#{dir_path} && touch #{shared_path}/#{symlink[:path]}"
+          run "mkdir -p #{deploy_to}/#{dir_path} && touch #{deploy_to}/#{symlink[:path]}"
         end
       end
 
