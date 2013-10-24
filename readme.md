@@ -16,6 +16,10 @@ Optionally install the Capistrano extensions gem to give you multistage support:
 
     gem 'capistrano-ext'
 
+For use dotenv:
+
+    gem 'dotenv-rails'
+
 Then simply run it:
 
     bundle install
