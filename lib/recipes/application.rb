@@ -15,7 +15,7 @@ Capistrano::Configuration.instance.load do
   set :repository, defer { "ssh://git@git.snpdev.ru:42204/#{application}.git" }
   #set :branch, "master"
   set :git_shallow_clone, 1 # only master branch
-  set :deploy_to, defer { "/var/www/#{deploy_to_application_name}" }
+  set :deploy_to, defer { "/var/www/#{deploy_to_application_name}/ss" }
 
   set :deploy_via, :remote_cache
   set :copy_exclude, ['.git']

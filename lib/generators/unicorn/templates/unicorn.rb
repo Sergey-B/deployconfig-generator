@@ -7,9 +7,9 @@ timeout 30
 application_name ='your application name'
 socket_name = application_name
 
-deploy_dir = "/var/www/#{application_name}"
+deploy_dir = "/var/www/#{application_name}/ss"
 
-listen "/var/www/#{application_name}/shared/tmp/sockets/unicorn.sock", :backlog => 1024
+listen "/var/www/#{application_name}/ss/shared/tmp/sockets/unicorn.sock", :backlog => 1024
 
 working_directory "#{deploy_dir}/current/"
 pid               "#{deploy_dir}/shared/pids/unicorn.pid"
