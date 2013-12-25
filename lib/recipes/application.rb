@@ -43,7 +43,9 @@ Capistrano::Configuration.instance.load do
   # rbenv
   set :rbenv_ruby_version, "1.9.3-p392"
 
-  set :stages, %w(testing production)
+  if fetch(:stages).nil?
+    set :stages, %w(testing production)
+  end
   set :default_stage, "testing"
   require 'capistrano/ext/multistage'
 
