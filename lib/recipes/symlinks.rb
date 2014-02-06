@@ -1,23 +1,23 @@
 Capistrano::Configuration.instance.load do
   namespace :symlink do
 
-      desc "Setup symlinks"
+      desc 'Setup symlinks'
       task :setup, :except => { :no_release => true } do
         symlinks.each do |symlink|
-          dir_path = File.dirname(symlink[:path])
+          dir_path = symlink[:path].match(/^(.*)\//)[1] rescue ''
           run "mkdir -p #{deploy_to}/shared/#{dir_path} && touch #{deploy_to}/shared/#{symlink[:path]}"
         end
       end
 
-      desc "Upload symlink files"
+      desc 'Upload symlink files'
       task :local_upload, :roles => :app, :except => { :no_release => true } do
-        labels = ENV['LABELS'].split(',')
+        labels = ENV['LABELS'].split(',') rescue []
         symlinks.select { |symlink| labels.include? symlink[:label].to_s }.each { |symlink|
           upload symlink[:path], "#{shared_path}/#{symlink[:path]}" if File.file?(symlink[:path])
         }
       end
 
-      desc "Download symlink files from remote"
+      desc 'Download symlink files from remote'
       task :remote_download, :roles => :app, :except => { :no_release => true } do
         labels = ENV['LABELS'].split(',')
         symlinks.select { |symlink| labels.include? symlink[:label].to_s }.each { |symlink|

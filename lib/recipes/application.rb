@@ -41,7 +41,7 @@ Capistrano::Configuration.instance.load do
 
   set :application, defer { application }
   # rbenv
-  set :rbenv_ruby_version, '1.9.3-p392'
+  set :rbenv_ruby_version, '1.9.3-p484'
 
   begin
     fetch(:stages)
