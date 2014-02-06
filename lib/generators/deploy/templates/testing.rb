@@ -9,3 +9,4 @@ set :user, 'username'
 set :group, 'group'
 set :password, 'password'
 set :keep_releases, 10
+set :default_environment, { 'WORKER_COUNT' => '1' }
