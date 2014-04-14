@@ -3,7 +3,8 @@ Capistrano::Configuration.instance.load do
     desc "Tail all application log files"
     task :tail, :roles => :app do
       log_name = ENV.fetch('LOG_NAME') { '*' }
-      run "tail -f -n 100 #{shared_path}/log/#{log_name}.log" do |channel, stream, data|
+      log_list = `ls ./log/ | awk '{ print $0 }'`.split
+      run "tail -f -n 100 #{shared_path}/log/\"#{log_name}\".log" do |channel, stream, data|
         puts "#{channel[:host]}: #{data}"
         break if stream == :err
       end
