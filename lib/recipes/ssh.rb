@@ -36,7 +36,7 @@ Capistrano::Configuration.instance.load do
       params += " -p #{options[:port]}" unless options[:port].nil?
       logger.debug "connecting to #{host}"
       logger.info "password: #{password}" if self.variables[:password].kind_of?(String)
-      params += %{ -t "cd #{fetch(:ssh_default_dir)} && bash"} if self[:ssh_default_dir]
+      params += %{ -t "cd #{fetch(:ssh_default_dir)} && bash -l"} if self[:ssh_default_dir]
       exec "ssh #{params}"
     end
   end
