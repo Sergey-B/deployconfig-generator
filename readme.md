@@ -48,10 +48,10 @@ To create unicorn.rb in config run:
 
 ## Additional Capistrano Recipes
 
-- [cap symlink:local_upload](##cap symlink:local_upload)
-- [cap ssh:keygen](##cap ssh:keygen)
-- [cap ssh:cat_pub](##cap ssh:cat_pub)
-- [cap ssh:connect](##cap ssh:connect)
+- [cap symlink:local_upload](#cap symlink:local_upload)
+- [cap ssh:keygen](#cap ssh:keygen)
+- [cap ssh:cat_pub](#cap ssh:cat_pub)
+- [cap ssh:connect](#cap ssh:connect)
 
 ## cap symlink:local_upload
 
@@ -88,6 +88,7 @@ Read public ssh key from remote server:
 ```bash
 $ cap ssh:cat_pub
 ```
+
 
 ## cap ssh:connect
 
